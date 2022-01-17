@@ -1,0 +1,28 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block content %}
+    <section id="spotlight" class="wrapper flex-wrapper">
+            <section class="content">
+                <h1><span>StartUp Landing </span><br/>Page Template Free</h1>
+                <p>Use Evolo free landing page template to promote your business startup and generate leads for the offered services.</p>
+                <a href="#" class='button'>DISCOVER</a>
+            </section>
+            <section class="right_container">
+                <div class="image_container">
+                    <img class="background" src="{% static 'images/header-background.jpg' %}" alt="" />
+                    <img class="teamwork" src="{% static 'images/header-teamwork.svg' %}" alt="" /> 
+                </div>
+            </section>           
+    </section>
+    <section id="brands">
+        <section class="wrapper">
+            <p>Trusted By</p>
+            <ul>
+                {% for customer in customers %}
+                    <li><a href="#"><img src="{{customer.logo.url}}" alt="logo" /></a></li>
+                {% endfor %}
+            </ul>
+        </section>
+    </section>
+{% endblock %}

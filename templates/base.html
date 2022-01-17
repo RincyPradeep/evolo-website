@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8" />
+        <title>Evolo</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
+        <link rel="stylesheet" href="{% static 'css/fontello.css' %}" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="{% static 'images/favicon.png' %}"
+        />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:image" content="" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+    </head>
+    <body>
+        <header>
+            <h1 class="left">
+                <a href="#"><img src="{% static 'images/logo.svg' %}" alt="Logo" /></a>
+            </h1>
+            <nav class="right">
+                <ul>       
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Request</a></li>
+                    <li><a href="#">About<i class="fas fa-caret-down"></i></a></li>
+                    <li><a href="#">Contact</a></li>   
+                    <li>
+                        <span class="icons">
+                            <a href="#"><img src="{% static 'images/facebook.png' %}" alt="facebook" style="width:20px" /></a>
+                            <a href="#"><img src="{% static 'images/twitter.png' %}" alt="twitter" style="width:20px" /></a>
+                        </span>
+                    </li>          
+                </ul>
+            </nav>
+        </header>
+        {% block content %}
+
+        {% endblock %}
+    </body>
+</html>
