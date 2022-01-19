@@ -15,12 +15,85 @@
                 </div>
             </section>           
     </section>
-    <section id="brands">
+    <section id="customers">
         <section class="wrapper">
             <p>Trusted By</p>
             <ul>
                 {% for customer in customers %}
                     <li><a href="#"><img src="{{customer.logo.url}}" alt="logo" /></a></li>
+                {% endfor %}
+            </ul>
+        </section>
+    </section>
+    <section id="services">
+        <section class="wrapper">
+            <h2>Business Growth Services</h2>
+            <p>We serve small and medium sized companies in all tech related industries with high quality growth services which are presented below.</p>
+            <ul>
+                {% for service in services %}
+                <li>
+                    <img src="{{service.image.url}}" alt=""/>
+                    <h3>{{service.title}}</h3>
+                    <p>{{service.description}}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </section>
+    <section id="features">
+        <section class="wrapper">
+            {% for feature in features %}
+                <section class="item">
+                    <div class="content">
+                        <h2>{{feature.title}}</h2>
+                        <p>{{feature.description}} </p>
+                        <ul>
+                            {% for item in feature.list_items %}
+                                <li>
+                                    <img src="{% static 'images/check.png' %}" alt=""/>
+                                    <p>{{item}}</p>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <a href="#" class="button">LIGHTBOX</a>
+                    </div>
+                    <div class="image_container">
+                        <img src="{{feature.image.url}}" alt="">
+                    </div>
+                </section>
+            {% endfor %}
+        </section>
+    </section>
+    <section id="pricing">
+        <section class="wrapper">
+            <h2>Multiple Pricing Options</h2>
+            <p>We've prepared pricing plans for all budgets so you can started right away. They're great for small companies and large organizations. </p>
+            <ul>
+                {% for price in pricings %}
+                <li>
+                    <h3>{{price.title}}</h3>
+                    <p>{{price.description}}</p>   
+                    <div class="price">
+                        <span>&#36;</span><h1>{{price.price_in_dollar}}</h1>
+                        <label>Monthly</label>
+                    </div>                                                       
+                    <ul>
+                        {% for item in price.feature_list %}
+                        <li>
+                            <img src="{% static 'images/check.png' %}" alt="">
+                            <span>{{item}}</span>
+                        </li>
+                        {% endfor %}
+                        
+                        {% for item in price.not_feature_list %}
+                        <li>
+                            <img src="{% static 'images/cancel.png' %}" class="cancel" alt="">
+                            <span>{{item}}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <a href="#" class="button">REQUEST</a>
+                </li>
                 {% endfor %}
             </ul>
         </section>
