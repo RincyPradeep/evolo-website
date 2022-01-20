@@ -14,7 +14,8 @@
                     <img class="teamwork" src="{% static 'images/header-teamwork.svg' %}" alt="" /> 
                 </div>
             </section>           
-    </section>
+    </section> <!-- section#spotlight -->
+
     <section id="customers">
         <section class="wrapper">
             <p>Trusted By</p>
@@ -24,7 +25,8 @@
                 {% endfor %}
             </ul>
         </section>
-    </section>
+    </section> <!-- section#customers -->
+
     <section id="services">
         <section class="wrapper">
             <h2>Business Growth Services</h2>
@@ -39,7 +41,8 @@
                 {% endfor %}
             </ul>
         </section>
-    </section>
+    </section> <!-- section#services -->
+
     <section id="features">
         <section class="wrapper">
             {% for feature in features %}
@@ -63,7 +66,8 @@
                 </section>
             {% endfor %}
         </section>
-    </section>
+    </section> <!-- section#features -->
+
     <section id="pricing">
         <section class="wrapper">
             <h2>Multiple Pricing Options</h2>
@@ -80,14 +84,14 @@
                     <ul>
                         {% for item in price.feature_list %}
                         <li>
-                            <img src="{% static 'images/check.png' %}" alt="">
+                            <img src="{% static 'images/check.png' %}" alt="check">
                             <span>{{item}}</span>
                         </li>
                         {% endfor %}
                         
                         {% for item in price.not_feature_list %}
                         <li>
-                            <img src="{% static 'images/cancel.png' %}" class="cancel" alt="">
+                            <img src="{% static 'images/cancel.png' %}" class="cancel" alt="cancel">
                             <span>{{item}}</span>
                         </li>
                         {% endfor %}
@@ -96,6 +100,119 @@
                 </li>
                 {% endfor %}
             </ul>
+        </section>
+    </section>  <!-- section#pricing -->
+
+    <section id="contact">
+        <section class="wrapper">
+            <div class="left">
+                <h3>Fill The Following Form To Request A Meeting</h3>
+                <p>Evolo is one of the easiest and feature acked marketing automation apps in the market. Discover what it can do for your business organization right away.</p>
+                <ul>
+                    <li>
+                        <img src="{% static 'images/check.png' %}" alt="check"/>
+                        <p><span>Automate your marketing </span>activities and get results today</p>
+                    </li>
+                    <li>
+                        <img src="{% static 'images/check.png' %}" alt="check"/>
+                        <p><span>Interact with all your </span>targeted customers at a personal level</p>
+                    </li>
+                    <li>
+                        <img src="{% static 'images/check.png' %}" alt="check"/>
+                        <p><span>Convince them to buy </span>your company's awesome products</p>
+                    </li>
+                    <li>
+                        <img src="{% static 'images/check.png' %}" alt="check"/>
+                        <p><span>Save precious time </span>and invest it where you need it the most</p>
+                    </li>
+                </ul> 
+            </div>
+            <div class="right">
+                <form action="{% url 'web:contact' %}" method="POST" class="ajax">
+                        {% csrf_token %}
+                        <div class="input">{{form.full_name}}</div>
+                        <div class="input">{{form.email}}</div>                       
+                        <div class="input">{{form.phone}}</div>
+                        <div class="input">{{form.interested_in}}</div>
+                        <div class="full checkbox">
+                            {{form.user_agreement}}
+                            <label for="{{form.user_agreement.id_for_label}}">I agree with Evolo's stated <a href="#">Privacy Policy</a> and <a href="#">Terms & Conditions</a> </label>
+                        </div>
+                        <div class="full">
+                            <input class="submit" type="submit" value="REQUEST" />
+                        </div>
+                </form>
+            </div>
+        </section>
+    </section> <!-- section#contact -->
+
+    <section id="video">
+        <section class="wrapper">
+            <h2>Check Out The Video</h2>
+            {% for video in videos %}
+            <div class="video-frame">
+                <img src="{{video.image.url}}" alt="video" class="main-image">
+                <img src="{% static 'images/play.svg' %}" alt="play" class="play">
+            </div>        
+            {% endfor %}
+            <p>The video will show you a case study for one of our <span>Major Customers </span>and will help you understand why your startup needs Evolo in this highly competitive market.</p>
+        </section>
+    </section> <!-- section#video -->
+
+    <section id="team-members">
+        <section class="wrapper">
+            <div class="top">
+                <h2>About The Team</h2>
+                <p>Meat our team of specialized marketers and business developers which will help you research new products and launch them in new emerging markets.</p>
+            </div>
+            <div class="bottom">
+                <ul>
+                    {% for member in team_members %}
+                    <li>
+                        <img src="{{member.image.url}}" alt="{{member.name}}">
+                        <h3>{{member.name}}</h3>
+                        <p>{{member.designation}}</p>
+                        <div class="social-icons">
+                            <img src="{% static 'images/facebook.png' %}" alt="facebook">
+                            <img src="{% static 'images/twitter.png' %}" alt="twitter">
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+    </section> <!-- section#team-members -->
+
+    <section id="footer">
+        <section class="wrapper">
+            <div class="top">
+                <div class="item">
+                    <h4>About Evolo</h4>
+                    <p>We're passionate about offering some of the best business growth services for startups</p>
+                </div>
+                <div class="item">
+                    <h4>Important Links </h4>
+                    <ul>
+                        <li>
+                            <p>Our business partners <a href="#">startuguide.com</a></p>
+                        </li>
+                        <li>
+                            <p>Read our <a href="#">Terms & Conditions</a><a href="#">Privacy Policy</a></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Social Media</h4>
+                    <img src="{% static 'images/facebook.png' %}" alt="facebook">
+                    <img src="{% static 'images/twitter.png' %}" alt="twitter">
+                    <img src="{% static 'images/google-plus.png' %}" alt="google-plus">
+                    <img src="{% static 'images/instagram.png' %}" alt="instagram">
+                    <img src="{% static 'images/linkedin.png' %}" alt="linkedin">
+                </div>
+            </div>
+            <div class="bottom">
+                <small>Copyright &copy;2021 - All rights reserved</small>
+            </div>
         </section>
     </section>
 {% endblock %}
