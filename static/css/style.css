@@ -25,6 +25,9 @@ body {
 	min-width: 320px;
 	font-weight: 500;
 }
+html{
+	width: 100%;
+}
 input,textarea,select{
 	font-family: "GT-Eesti", Arial, Helvetica, sans-serif;
 	font-weight: 500;
@@ -114,9 +117,10 @@ header {
 	align-items: center;
 	justify-content: space-between;
 	display: flex;
-	width: 97%;
+	width: 100%;
 	margin: 0 auto;
 	max-width: 1360px;
+	position: relative;
 }
 header h1.left {
 	width: 140px;
@@ -149,6 +153,14 @@ header nav ul li a {
 header nav ul li span.icons a img{
 	margin-right: 20px;
 	width:20px;
+}
+header img.background {
+	display: block;
+	width: 1500px;
+    z-index: -1;
+	position:absolute;
+	top: 0;
+	right:-80px;
 }
 #spotlight {
 	justify-content: space-between;
@@ -191,14 +203,6 @@ header nav ul li span.icons a img{
 	width:100%;
 	height:100%;
 }
-#spotlight .right_container .image_container img.background {
-	display: block;
-	width: 1500px;
-    z-index: -1;
-	position:absolute;
-	top: -100px;
-	right:-164px;
-}
 #spotlight .right_container .image_container img.teamwork{
 	width:600px;
 }
@@ -212,14 +216,18 @@ header nav ul li span.icons a img{
 }
 #customers ul {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
+	flex-wrap: wrap;
 	margin-bottom: 24px;
-	padding:0 32px;
-	width: 75%;
-	height:100px;
+	margin-right:-20px;
+	padding:30px 32px;
 	margin: 0 auto;
 	background-color: rgb(246, 252, 249);	
+}
+#customers ul li{
+	margin-right: 20px;
+	margin-bottom: 10px;
 }
 #customers ul li a {
 	display: block;
@@ -242,20 +250,20 @@ header nav ul li span.icons a img{
 }
 #services ul{
 	margin-top:50px;
+	margin-right: -50px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
+	flex-wrap: wrap;
 }
 #services ul li{
 	border:2px solid rgb(236, 235, 235);
 	border-radius: 8px;
 	padding:20px;
 	margin-right: 50px;
+	margin-bottom: 20px;
 	text-align: center;
 	width:350px;
-}
-#services ul li:last-child{
-	margin-right: 0;
 }
 #services ul li img{
 	width:100px;
@@ -320,7 +328,7 @@ header nav ul li span.icons a img{
 	padding:30px;
 }
 #features section.item div.image_container img{
-	width:500px;
+	width:90%;
 }
 #pricing{
 
@@ -337,9 +345,11 @@ header nav ul li span.icons a img{
 }
 #pricing ul{
 	margin-top:50px;
+	margin-right: -50px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
+	flex-wrap: wrap;
 }
 #pricing ul li{
 	border:2px solid rgb(236, 235, 235);
@@ -347,12 +357,10 @@ header nav ul li span.icons a img{
 	padding:30px;
 	padding-bottom: 50px;
 	margin-right: 50px;
+	margin-bottom: 50px;
 	text-align: center;
 	width:350px;
 	position: relative;
-}
-#pricing ul li:last-child{
-	margin-right: 0;
 }
 #pricing ul li h3{
 	font-family: 'GT-Eesti500';
@@ -391,6 +399,7 @@ header nav ul li span.icons a img{
 	border:none;
 	width: 100%;
 	margin-right: 0;
+	margin-bottom: 10px;
 	padding:0 0 10px;
 	text-align: left;
 }
@@ -429,6 +438,7 @@ header nav ul li span.icons a img{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	flex-wrap: wrap;
 }
 #contact div.left {
 	width: 48%;
@@ -647,17 +657,20 @@ header nav ul li span.icons a img{
 }
 #team-members div.bottom ul{
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	flex-wrap: wrap;
-	width:80%;
+	width:100%;
 	margin: 50px auto;
+	/* margin-right: -30px; */
 }
 #team-members div.bottom ul li{
 	width:20%;
 	text-align: center;
+	margin-right: 30px;
+	margin-bottom: 20px;
 }
 #team-members div.bottom ul li img{
-	width:150px;
+	width:80%;
 	border-radius: 50%;
 }
 #team-members div.bottom ul li h3{
@@ -689,9 +702,11 @@ header nav ul li span.icons a img{
 	flex-wrap: wrap;
 	border-bottom:2px solid rgb(236, 235, 235) ;
 	padding-bottom: 50px;
+	margin-right: -20px;
 }
 #footer div.top div.item{
 	width:30%;
+	margin-right: 20px;
 }
 #footer div.top div.item h4{
 	font-size: 20px;
@@ -706,7 +721,7 @@ header nav ul li span.icons a img{
 	color:#00BFD8;
 }
 #footer div.top div.item ul li{
-	
+	margin-bottom: 20px;
 }
 #footer div.top div.item ul li a{
 	color:#00BFD8;
@@ -725,4 +740,228 @@ header nav ul li span.icons a img{
 }
 #footer div.bottom small{
 	
+}
+
+@media all and (max-width:1280px){
+	header img.background{
+		width: 1135px;
+	}
+	#spotlight .content h1 {
+		font-size: 44px;
+	}
+	#spotlight .content p {
+		font-size: 18px;
+	}
+	#spotlight .right_container .image_container img.teamwork {
+		width: 395px;
+	}
+	#services p {
+		font-size: 14px;
+	}
+	/* #features section.item div.image_container img {
+    	width: 340px;
+	} */
+	#features section.item div.content h2 {
+		width: 100%;
+		font-size: 34px;
+	}
+	#features section.item div.content p {
+		width: 100%;
+		font-size: 12px;
+	}
+	#features section.item div.content ul li img {
+		width: 14px;
+	}
+	#pricing p {
+		width: 66%;
+	}
+	#contact div.left h3 {
+		font-size: 36px;
+	}
+	#contact div.left p {
+		font-size: 14px;
+	}
+	#video p {
+		width: 74%;
+	}
+	#team-members div.bottom ul li h3 {
+		font-size: 16px;
+	}
+	#contact div.right {
+		width: 40%;
+	}
+}
+
+@media all and (max-width:1280px){
+	header img.background {
+		right: -18px;
+	}
+}
+
+@media all and (max-width:980px){
+	header img.background {
+		width: 900px;
+	}
+	header nav ul li {
+		margin-right: 13px;
+	}
+	#spotlight {
+		padding: 15px 0 26px;
+	}
+	#spotlight .content h1 {
+		font-size: 30px;
+	}
+	#spotlight .content p {
+		font-size: 12px;
+	}
+	#spotlight .right_container .image_container img.teamwork {
+		width: 273px;
+	}
+	#features section.item div.content h2 {
+		font-size: 27px;
+	}
+	#features section.item div.content {
+		width: 60%;
+	}
+	#features section.item div.image_container {
+		width: 40%;
+	}
+	#contact div.left {
+		width: 100%;
+		margin-bottom: 50px;
+	}
+	#contact div.right {
+		width: 100%;
+	}
+	#contact div.right form div.full input.submit {
+		padding: 15px 25px;
+		width: 50%;
+		margin: 20px auto;
+	}
+	#team-members div.bottom ul li {
+		width: 25%;
+	}
+	#team-members {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	#team-members div.bottom ul{
+		margin-bottom: 0;
+	}
+	#footer div.top div.item {
+		width: 40%;
+	}
+}
+
+@media all and (max-width:768px){
+	header h1.left {
+		margin: auto;
+	}
+	header img.background {
+		display: none;
+	}
+	header nav.right {
+		display: none;
+	}
+	#team-members div.bottom ul li {
+		width: 27%;
+	}
+}
+
+@media all and (max-width:640px){
+	#spotlight .right_container {
+		display: none;
+	}
+	#spotlight .content {
+		width: 100%;
+	}
+	#spotlight .content a.button {
+		padding: 10px 20px;
+		font-size: 12px;
+	}
+	#services h2 {
+		font-size: 36px;
+	}
+	#services p {
+		width: 100%;
+	}
+	#features {
+		padding: 0;
+	}
+	#features section.item div.image_container {
+		display: none;
+	}
+	#features section.item div.content {
+		width: 100%;
+	}
+	#features section.item div.content a.button{
+		padding: 10px 20px;
+		font-size: 12px;
+	}
+	#pricing h2 {
+		font-size: 36px;
+	}
+	#pricing p {
+		width: 100%;
+	}
+	#video h2 {
+		font-size: 36px;
+	}
+	#video .video-frame .main-image {
+		width: 60%;
+	}
+	#video p {
+		width: 100%;
+	}
+	#video .video-frame .play {
+		width: 50px;
+		height: 50px;
+	}
+	#team-members div.top h2 {
+		font-size: 36px;
+	}
+	#team-members div.top p {
+		width: 100%;
+	}
+	#team-members div.bottom ul li {
+		width: 40%;
+	}
+	#footer div.top div.item img {
+		width: 15px;
+	}
+	#footer div.bottom small {
+		font-size: 10px;
+	}
+}
+
+@media all and (max-width:480px){
+	#features section.item div.content h2 {
+		font-size: 20px;
+	}
+	#pricing ul li ul li span {
+		font-size: 12px;
+	}
+	#team-members div.bottom ul li {
+		margin-right: 0;
+		width: 100%;
+	}
+	#contact div.left h3 {
+		font-size: 27px;
+	}
+	#contact {
+		margin: 0;
+	}
+	#services h2 {
+		font-size: 27px;
+	}
+	#pricing h2 {
+		font-size: 27px;
+	}
+	#video h2 {
+		font-size: 27px;
+	}
+	#footer div.top div.item {
+		width: 100%;
+		margin-bottom: 20px;
+	}
 }
